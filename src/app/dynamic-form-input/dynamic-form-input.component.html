@@ -8,6 +8,9 @@
         [id]="input.key"
         [type]="input.type"
       />
+      <div class="errorMessage" *ngIf="!isValid">
+        {{ input.label }} is required
+      </div>
     </div>
 
     <div *ngSwitchCase="'dropdown'">
@@ -34,6 +37,9 @@
         <label class="form-check-label" [attr.for]="input.key">{{
           input.label
         }}</label>
+      </div>
+      <div class="errorMessage" *ngIf="!isValid">
+        {{ input.label }} is check
       </div>
     </div>
 
